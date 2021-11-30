@@ -2,19 +2,18 @@ import { useEffect, useState } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
-	const [blogs, setBlogs] = useState([{}, {}, {}]);
-	const [name, setName] = useState("test");
+	const [blogs, setBlogs] = useState(null);
 
 	useEffect(() => {
-		console.log("I am here");
-	}, [name]);
+		fetch("http://localhost:8000/blogs")
+			.then((res) => {
+				return res.json();
+			})
+			.then((data) => {
+				setBlogs(data);
+			});
+	}, []);
 
-	return (
-		<div>
-			<BlogList blogs={blogs} title="My Blogs">
-				Bloglist component
-			</BlogList>
-		</div>
-	);
+	return <div>{blogs && <BlogList blogs={blogs} title="My Blogs" />}</div>;
 };
 export default Home;

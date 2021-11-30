@@ -3,13 +3,12 @@ const BlogList = ({ blogs, title }) => {
 		<div>
 			<h3>{title}</h3>
 			{blogs.map((blog) => (
-				<div>
+				<div key={blog.id}>
 					<h2>{blog.title}</h2>
 					<h3>{blog.author}</h3>
 					<h3>{blog.body}</h3>
 				</div>
 			))}
-			;
 		</div>
 	);
 };
