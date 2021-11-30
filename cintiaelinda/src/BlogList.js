@@ -1,6 +1,6 @@
 const BlogList = ({ blogs, title }) => {
 	return (
-		<div>
+		<div className="blogNames">
 			<h3>{title}</h3>
 			{blogs.map((blog) => (
 				<div key={blog.id}>

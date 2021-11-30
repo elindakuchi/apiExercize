@@ -1,15 +1,24 @@
 import React from "react";
-import { Link, Router, BrowserRouter } from "react-router-dom";
+import { Link, BrowserRouter } from "react-router-dom";
 
 const Navbar = () => {
 	return (
 		<>
-			<h1>Our Blog</h1>
-
-			<div>
+			<div
+				style={{
+					color: "yellow",
+					backgroundColor: "green",
+					borderRadius: "20px",
+					height: "40px",
+				}}
+			>
 				<BrowserRouter>
-					<Link to="/"> Home</Link>
-					<Link to="/blogs"> Blogs</Link>
+					<Link to="/" style={{ padding: "30px", color: "white" }}>
+						Home
+					</Link>
+					<Link to="/blogs" style={{ padding: "30px", color: "white" }}>
+						Blogs
+					</Link>
 				</BrowserRouter>
 			</div>
 		</>
